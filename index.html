@@ -1,0 +1,229 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>MigueMoreiraIT — Enlaces</title>
+<meta name="description" content="Ciberseguridad y tecnología, explicadas claro." />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Geist:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet" />
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  html, body { background: #13203A; }
+  body {
+    min-height: 100vh;
+    background: radial-gradient(120% 80% at 50% -10%, #1a3153 0%, #14283D 45%, #13203A 100%);
+    font-family: 'Geist', system-ui, sans-serif;
+    display: flex;
+    justify-content: center;
+    padding: 56px 20px 40px;
+  }
+  .wrap { width: 100%; max-width: 480px; display: flex; flex-direction: column; align-items: center; }
+
+  /* Header */
+  .header { opacity: 0; display: flex; flex-direction: column; align-items: center; text-align: center; }
+  .mono-mark {
+    width: 52px; height: 52px;
+    border: 1.5px solid #94B4D2; border-radius: 7px;
+    display: flex; align-items: center; justify-content: center;
+    font-family: 'JetBrains Mono', monospace; font-weight: 500; font-size: 16px;
+    letter-spacing: 0.04em; color: #E6EEF6;
+  }
+  .wordmark {
+    margin-top: 18px;
+    font-family: 'Instrument Serif', serif;
+    font-size: 34px; line-height: 1; color: #E6EEF6;
+    letter-spacing: 0.01em; white-space: nowrap;
+  }
+  .wordmark em { font-style: italic; color: #94B4D2; -webkit-text-stroke: 0.7px #94B4D2; }
+  .subtitle {
+    margin-top: 14px;
+    font-family: 'JetBrains Mono', monospace; font-size: 11.5px;
+    text-transform: uppercase; letter-spacing: 0.3em; color: #7F9BBB;
+  }
+  .bio { margin-top: 12px; font-size: 15px; line-height: 1.5; color: #BFD2E5; max-width: 32ch; }
+
+  /* Links */
+  .links { margin-top: 40px; width: 100%; display: flex; flex-direction: column; gap: 12px; }
+  .link {
+    display: flex; align-items: center; gap: 14px;
+    text-decoration: none;
+    background: rgba(230,238,246,0.06);
+    border: 1px solid rgba(148,180,210,0.2);
+    border-radius: 12px;
+    padding: 0 16px; min-height: 56px;
+    opacity: 0;
+    transition: transform 150ms ease-out, border-color 150ms ease-out;
+  }
+  .link:hover, .link:active { transform: scale(0.97); border-color: #00E5C7; }
+  .link .icon { flex-shrink: 0; color: #94B4D2; display: flex; }
+  .link .body { flex: 1; display: flex; flex-direction: column; gap: 2px; }
+  .link .title { font-size: 15.5px; font-weight: 500; color: #E6EEF6; }
+  .link .meta { font-family: 'JetBrains Mono', monospace; font-size: 10.5px; letter-spacing: 0.04em; color: #7F9BBB; }
+  .link .chevron { flex-shrink: 0; color: #6E89A8; display: flex; }
+
+  .link.featured {
+    gap: 16px;
+    background: linear-gradient(180deg, rgba(0,229,199,0.09), rgba(0,229,199,0.03));
+    border: 1.5px solid rgba(0,229,199,0.55);
+    padding: 18px; min-height: 72px;
+    box-shadow: 0 0 0 1px rgba(0,229,199,0.10), 0 0 16px rgba(0,229,199,0.3);
+  }
+  .link.featured .icon { width: 40px; height: 40px; align-items: center; justify-content: center; color: #00E5C7; }
+  .link.featured .eyebrow {
+    font-family: 'JetBrains Mono', monospace; font-size: 10px; text-transform: uppercase;
+    letter-spacing: 0.22em; color: #00E5C7;
+  }
+  .link.featured .title { font-size: 16.5px; font-weight: 600; letter-spacing: -0.01em; }
+  .link.featured .chevron { color: #00E5C7; }
+
+  /* Footer */
+  .footer { margin-top: 40px; display: flex; align-items: center; gap: 12px; }
+  .footer .line { width: 24px; height: 1px; background: rgba(0,229,199,0.5); }
+  .footer .text {
+    font-family: 'JetBrains Mono', monospace; font-size: 10px; text-transform: uppercase;
+    letter-spacing: 0.24em; color: #5A7594;
+  }
+</style>
+</head>
+<body>
+  <div class="wrap" id="root">
+
+    <!-- HEADER -->
+    <div class="header" data-anim="header">
+      <div class="mono-mark">[MM]</div>
+      <div class="wordmark">MigueMoreira<em>IT</em></div>
+      <div class="subtitle">Lic. Tecnología de la Información</div>
+      <div class="bio">Ciberseguridad y tecnología, explicadas claro.</div>
+    </div>
+
+    <!-- LINKS -->
+    <div class="links">
+
+      <!-- 01 FEATURED -->
+      <a href="https://ig.me/m/miguemoreirait" target="_blank" rel="noopener" class="link featured" data-anim="link" data-featured="1">
+        <span class="icon">
+          <svg viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M14 3H7a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V8z"></path><path d="M14 3v5h5"></path><path d="M9.5 14.5l1.8 1.8 3.2-3.6"></path></svg>
+        </span>
+        <span class="body">
+          <span class="eyebrow">Servicio · Cupos limitados</span>
+          <span class="title">Revisión de Perfil Técnico</span>
+        </span>
+        <span class="chevron">
+          <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M9 6l6 6-6 6"></path></svg>
+        </span>
+      </a>
+
+      <!-- 02 CAPACITACIÓN -->
+      <a href="https://concientizacion.vercel.app" target="_blank" rel="noopener" class="link" data-anim="link">
+        <span class="icon">
+          <svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3l7 3v5c0 4.4-3 7.6-7 9-4-1.4-7-4.6-7-9V6z"></path><path d="M9.2 12l2 2 3.6-4"></path></svg>
+        </span>
+        <span class="body"><span class="title">Charla de Concientización</span></span>
+        <span class="chevron">
+          <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M9 6l6 6-6 6"></path></svg>
+        </span>
+      </a>
+
+      <!-- 03 INSTAGRAM -->
+      <a href="https://instagram.com/miguemoreirait" target="_blank" rel="noopener" class="link" data-anim="link">
+        <span class="icon">
+          <svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="18" height="18" rx="5"></rect><circle cx="12" cy="12" r="4"></circle><circle cx="17" cy="7" r="1"></circle></svg>
+        </span>
+        <span class="body">
+          <span class="title">Instagram</span>
+          <span class="meta">@miguemoreirait</span>
+        </span>
+        <span class="chevron">
+          <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M9 6l6 6-6 6"></path></svg>
+        </span>
+      </a>
+
+      <!-- 04 LINKEDIN -->
+      <a href="https://linkedin.com/in/miguemoreira" target="_blank" rel="noopener" class="link" data-anim="link">
+        <span class="icon">
+          <svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="18" height="18" rx="3"></rect><path d="M7 10v7"></path><circle cx="7" cy="7" r="0.6" fill="currentColor"></circle><path d="M11 17v-4a2 2 0 0 1 4 0v4"></path><path d="M11 17v-7"></path></svg>
+        </span>
+        <span class="body">
+          <span class="title">LinkedIn</span>
+          <span class="meta">Miguel A. Moreira</span>
+        </span>
+        <span class="chevron">
+          <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M9 6l6 6-6 6"></path></svg>
+        </span>
+      </a>
+
+      <!-- 05 WHATSAPP -->
+      <a href="https://wa.me/5491130578169" target="_blank" rel="noopener" class="link" data-anim="link">
+        <span class="icon">
+          <svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M4 20l1.4-4A8 8 0 1 1 8 18.6z"></path><path d="M9 9.5c0 3 2.5 5.5 5.5 5.5.7 0 1-.6 1-1 0-.3-.2-.5-.4-.6l-1.4-.6c-.3-.1-.5 0-.7.2l-.4.5c-1-.5-1.8-1.3-2.3-2.3l.5-.4c.2-.2.3-.4.2-.7l-.6-1.4c-.1-.3-.3-.4-.6-.4-.4 0-1 .3-1 1z"></path></svg>
+        </span>
+        <span class="body">
+          <span class="title">WhatsApp</span>
+          <span class="meta">Consultas directas</span>
+        </span>
+        <span class="chevron">
+          <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M9 6l6 6-6 6"></path></svg>
+        </span>
+      </a>
+
+      <!-- 06 MAIL -->
+      <a href="mailto:miguemoreirait@gmail.com" class="link" data-anim="link">
+        <span class="icon">
+          <svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="5" width="18" height="14" rx="2"></rect><path d="M4 7l8 6 8-6"></path></svg>
+        </span>
+        <span class="body">
+          <span class="title">Correo electrónico</span>
+          <span class="meta">miguemoreirait@gmail.com</span>
+        </span>
+        <span class="chevron">
+          <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M9 6l6 6-6 6"></path></svg>
+        </span>
+      </a>
+
+    </div>
+
+    <!-- FOOTER -->
+    <div class="footer">
+      <span class="line"></span>
+      <span class="text">© 2026 MigueMoreiraIT</span>
+      <span class="line"></span>
+    </div>
+
+  </div>
+
+  <script>
+  (function () {
+    var EASE = "cubic-bezier(0, 0, 0.2, 1)";
+    var root = document.getElementById('root');
+
+    var header = root.querySelector('[data-anim="header"]');
+    if (header) {
+      header.animate([{ opacity: 0 }, { opacity: 1 }], { duration: 400, easing: EASE, fill: "both" });
+    }
+
+    var BASE = 400;
+    var links = root.querySelectorAll('[data-anim="link"]');
+    links.forEach(function (el, i) {
+      var delay = BASE + i * 60;
+      el.animate([{ opacity: 0 }, { opacity: 1 }], { duration: 400, delay: delay, easing: EASE, fill: "both" });
+      el.animate(
+        [{ transform: "translateY(8px)" }, { transform: "translateY(0)" }],
+        { duration: 400, delay: delay, easing: EASE, fill: "backwards" }
+      );
+      if (el.hasAttribute("data-featured")) {
+        el.animate(
+          [
+            { boxShadow: "0 0 0 1px rgba(0,229,199,0.10), 0 0 16px rgba(0,229,199,0.3)" },
+            { boxShadow: "0 0 0 1px rgba(0,229,199,0.18), 0 0 30px rgba(0,229,199,0.6)" },
+            { boxShadow: "0 0 0 1px rgba(0,229,199,0.10), 0 0 16px rgba(0,229,199,0.3)" }
+          ],
+          { duration: 2500, delay: delay + 400, iterations: Infinity, easing: "ease-in-out" }
+        );
+      }
+    });
+  })();
+  </script>
+</body>
+</html>
