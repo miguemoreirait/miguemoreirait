@@ -226,8 +226,8 @@
         <input type="hidden" name="access_key" value="625b408e-e097-427b-bfe1-3895da64a61c">
         <input type="hidden" name="subject" value="Nuevo contacto desde miguemoreirait.vercel.app">
 
-        <input type="text" name="name" placeholder="Nombre" required>
-        <input type="email" name="email" placeholder="Email" pattern="[^@\s]+@[^@\s]+\.[a-zA-Z]{2,}" title="Ingresá un email válido, ej: nombre@dominio.com" required>
+        <input type="text" name="name" placeholder="Nombre" maxlength="60" required>
+        <input type="email" name="email" placeholder="Email" pattern="[^@\s]+@[^@\s]+\.[a-zA-Z]{2,}" title="Ingresá un email válido, ej: nombre@dominio.com" maxlength="60" required>
 
         <select name="servicio" required>
           <option value="">Servicio de interés</option>
@@ -236,7 +236,7 @@
           <option value="Charla de Concientización">Charla de Concientización</option>
         </select>
 
-        <textarea name="message" rows="3" placeholder="Mensaje (opcional)"></textarea>
+        <textarea name="message" rows="3" placeholder="Mensaje (opcional)" maxlength="500"></textarea>
 
         <button type="submit" class="contact-submit">Enviar consulta</button>
       </form>
