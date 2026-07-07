@@ -227,7 +227,7 @@
         <input type="hidden" name="subject" value="Nuevo contacto desde miguemoreirait.vercel.app">
 
         <input type="text" name="name" placeholder="Nombre" required>
-        <input type="email" name="email" placeholder="Email" required>
+        <input type="email" name="email" placeholder="Email" pattern="[^@\s]+@[^@\s]+\.[a-zA-Z]{2,}" title="Ingresá un email válido, ej: nombre@dominio.com" required>
 
         <select name="servicio" required>
           <option value="">Servicio de interés</option>
