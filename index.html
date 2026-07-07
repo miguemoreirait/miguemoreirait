@@ -79,6 +79,52 @@
   .link.featured .meta { color: #7FE0CE; }
   .link.featured .chevron { color: #00E5C7; }
 
+  /* Contact form */
+  .contact { margin-top: 40px; width: 100%; opacity: 0; }
+  .contact-eyebrow {
+    font-family: 'JetBrains Mono', monospace; font-size: 11.5px; text-transform: uppercase;
+    letter-spacing: 0.3em; color: #7F9BBB;
+  }
+  .contact-title {
+    margin-top: 8px; margin-bottom: 20px;
+    font-family: 'Instrument Serif', serif; font-size: 26px; color: #E6EEF6;
+  }
+  .contact-form { display: flex; flex-direction: column; gap: 12px; }
+  .contact-form input,
+  .contact-form select,
+  .contact-form textarea {
+    background: rgba(230,238,246,0.06);
+    border: 1px solid rgba(148,180,210,0.2);
+    border-radius: 12px;
+    padding: 14px 16px;
+    font-family: 'Geist', sans-serif;
+    font-size: 15px;
+    color: #E6EEF6;
+    outline: none;
+    transition: border-color 150ms ease-out;
+  }
+  .contact-form select option { color: #13203A; }
+  .contact-form ::placeholder { color: #7F9BBB; }
+  .contact-form input:hover,
+  .contact-form select:hover,
+  .contact-form textarea:hover,
+  .contact-form input:focus,
+  .contact-form select:focus,
+  .contact-form textarea:focus { border-color: #00E5C7; }
+  .contact-form textarea { resize: vertical; }
+  .contact-submit {
+    margin-top: 4px; min-height: 56px; border-radius: 12px;
+    border: 1.5px solid rgba(0,229,199,0.55);
+    background: linear-gradient(180deg, rgba(0,229,199,0.09), rgba(0,229,199,0.03));
+    color: #E6EEF6; font-family: 'Geist', sans-serif; font-weight: 500; font-size: 15.5px;
+    cursor: pointer; transition: transform 150ms ease-out;
+  }
+  .contact-submit:hover { transform: scale(0.98); }
+  .contact-status {
+    margin-top: 12px; font-family: 'JetBrains Mono', monospace; font-size: 11px;
+    letter-spacing: 0.05em; color: #7FE0CE; text-align: center; display: none;
+  }
+
   /* Footer */
   .footer { margin-top: 40px; display: flex; align-items: center; gap: 12px; }
   .footer .line { width: 24px; height: 1px; background: rgba(0,229,199,0.5); }
@@ -170,20 +216,31 @@
         </span>
       </a>
 
-      <!-- 06 MAIL -->
-      <a href="mailto:miguemoreirait@gmail.com" class="link" data-anim="link">
-        <span class="icon">
-          <svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="5" width="18" height="14" rx="2"></rect><path d="M4 7l8 6 8-6"></path></svg>
-        </span>
-        <span class="body">
-          <span class="title">Correo electrónico</span>
-          <span class="meta">miguemoreirait@gmail.com</span>
-        </span>
-        <span class="chevron">
-          <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M9 6l6 6-6 6"></path></svg>
-        </span>
-      </a>
+    </div>
 
+    <!-- CONTACTO -->
+    <div class="contact" data-anim="contact">
+      <div class="contact-eyebrow">Contacto</div>
+      <div class="contact-title">Empecemos por acá:</div>
+      <form class="contact-form" id="contact-form" action="https://api.web3forms.com/submit" method="POST">
+        <input type="hidden" name="access_key" value="625b408e-e097-427b-bfe1-3895da64a61c">
+        <input type="hidden" name="subject" value="Nuevo contacto desde miguemoreirait.vercel.app">
+
+        <input type="text" name="name" placeholder="Nombre" required>
+        <input type="email" name="email" placeholder="Email" required>
+
+        <select name="servicio" required>
+          <option value="">Servicio de interés</option>
+          <option value="Revisión de Perfil Técnico">Revisión de Perfil Técnico</option>
+          <option value="Asesoría 1:1">Asesoría 1:1</option>
+          <option value="Charla de Concientización">Charla de Concientización</option>
+        </select>
+
+        <textarea name="message" rows="3" placeholder="Mensaje (opcional)"></textarea>
+
+        <button type="submit" class="contact-submit">Enviar consulta</button>
+      </form>
+      <div class="contact-status" id="contact-status">Consulta enviada. Te respondo pronto.</div>
     </div>
 
     <!-- FOOTER -->
@@ -225,6 +282,38 @@
         );
       }
     });
+
+    var contact = root.querySelector('[data-anim="contact"]');
+    if (contact) {
+      var cDelay = BASE + links.length * 60 + 60;
+      contact.animate([{ opacity: 0 }, { opacity: 1 }], { duration: 400, delay: cDelay, easing: EASE, fill: "both" });
+    }
+
+    var form = document.getElementById('contact-form');
+    var status = document.getElementById('contact-status');
+    if (form) {
+      form.addEventListener('submit', function (e) {
+        e.preventDefault();
+        var data = new FormData(form);
+        fetch(form.action, { method: 'POST', body: data, headers: { 'Accept': 'application/json' } })
+          .then(function (res) { return res.json(); })
+          .then(function (json) {
+            if (json.success) {
+              form.reset();
+              status.style.display = 'block';
+            } else {
+              status.textContent = 'Hubo un error. Probá de nuevo o escribime por WhatsApp.';
+              status.style.color = '#E08585';
+              status.style.display = 'block';
+            }
+          })
+          .catch(function () {
+            status.textContent = 'Hubo un error. Probá de nuevo o escribime por WhatsApp.';
+            status.style.color = '#E08585';
+            status.style.display = 'block';
+          });
+      });
+    }
   })();
   </script>
 </body>
