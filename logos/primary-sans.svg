@@ -1,0 +1,39 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 100" width="600" height="100">
+  <defs>
+    <style>
+      @import url('https://fonts.googleapis.com/css2?family=Geist:wght@800&amp;family=Instrument+Serif&amp;family=JetBrains+Mono:wght@400;500&amp;display=swap');
+      .bracket {
+        font-family: 'JetBrains Mono', ui-monospace, monospace;
+        font-weight: 500;
+        font-size: 34px;
+        fill: #2E5A85;
+        letter-spacing: -1px;
+      }
+      .word {
+        font-family: 'Instrument Serif', Georgia, serif;
+        font-size: 56px;
+        font-weight: 400;
+        fill: #14283D;
+        letter-spacing: -0.015em;
+      }
+      .it-sans {
+        font-family: 'Geist', system-ui, sans-serif;
+        font-weight: 800;
+        font-style: normal;
+        font-size: 0.82em;
+        fill: #2E5A85;
+      }
+      .sub {
+        font-family: 'JetBrains Mono', ui-monospace, monospace;
+        font-size: 11px;
+        font-weight: 400;
+        fill: #3D5670;
+        letter-spacing: 0.3em;
+      }
+    </style>
+  </defs>
+  <rect x="2" y="8" width="84" height="84" fill="#F2F6FB" stroke="#2E5A85" stroke-width="1.5" rx="6"/>
+  <text x="44" y="60" text-anchor="middle" class="bracket">[MM]</text>
+  <text x="120" y="58" class="word">MigueMoreira<tspan class="it-sans" dx="4">IT</tspan></text>
+  <text x="120" y="82" class="sub">LIC. TECNOLOGÍA DE LA INFORMACIÓN</text>
+</svg>
